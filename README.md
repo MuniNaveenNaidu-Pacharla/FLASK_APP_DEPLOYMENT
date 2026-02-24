@@ -1,56 +1,91 @@
-# Student Performance Prediction System 🎓
+# Flask App Deployment with Docker & GitHub Actions 🚀
 
-A Machine Learning–based web application that predicts whether a student will **PASS or FAIL** based on academic and behavioral parameters such as attendance, study hours, and internal marks.
+This repository demonstrates a **complete DevOps workflow** for deploying a simple Flask application on an AWS EC2 instance using **Docker** and **GitHub Actions CI/CD**.
 
-The system uses a Logistic Regression model and is deployed as a web app using Flask, allowing users to input student data and instantly view predictions along with basic data analysis visualizations.
-
----
-
-## Features
-- Predicts student result (PASS / FAIL)
-- Machine Learning model trained using real student data
-- User-friendly web interface built with Flask
-- Data visualization for performance analysis
-- Clean and modular code structure
+On every push to the `main` branch, the application is automatically built and deployed to the EC2 server.
 
 ---
 
-## Tech Stack
-- **Programming Language:** Python  
-- **Machine Learning:** Scikit-learn  
-- **Data Handling:** Pandas, NumPy  
-- **Visualization:** Matplotlib  
-- **Web Framework:** Flask  
-- **Frontend:** HTML, CSS  
+## 📌 Project Overview
+
+* Flask web application
+* Dockerized application
+* Deployed on AWS EC2 (Ubuntu)
+* CI/CD pipeline using GitHub Actions
+* Automatic deployment via SSH
 
 ---
 
-## Machine Learning Workflow
-1. Data loading and preprocessing
-2. Feature selection
-3. Train–test split
-4. Model training using Logistic Regression
-5. Prediction and evaluation
-6. Visualization of insights
+## 🛠️ Tech Stack
+
+* **Backend:** Python, Flask
+* **Containerization:** Docker
+* **Cloud:** AWS EC2
+* **CI/CD:** GitHub Actions
+* **OS:** Ubuntu Linux
 
 ---
 
-## Input Parameters
-- Attendance percentage
-- Study hours per day
-- Internal assessment marks
+## ⚙️ How It Works
+
+1. Developer pushes code to the `main` branch
+2. GitHub Actions workflow is triggered
+3. Workflow connects to EC2 using SSH
+4. Latest code is pulled from GitHub
+5. Docker image is rebuilt
+6. Old container is stopped and removed
+7. New container is started with updated code
 
 ---
 
-## Output
-- Predicted result: **PASS / FAIL**
-- Visual charts:
-  - Pass vs Fail distribution
-  - Study hours vs Internal marks
+## 🚀 Deployment Steps (High Level)
+
+1. Launch an EC2 instance (Ubuntu)
+2. Install Docker and Git
+3. Clone this repository on EC2
+4. Create SSH keys and configure GitHub Secrets
+5. Configure GitHub Actions workflow
+6. Push code to trigger auto-deployment
 
 ---
 
-## How to Run the Project
-```bash
-pip install pandas scikit-learn flask matplotlib
-python app.py
+## 🌐 Accessing the Application
+
+After successful deployment, access the application using:
+
+```
+http://<EC2_PUBLIC_IP>
+```
+
+---
+
+## 🔐 GitHub Secrets Used
+
+| Secret Name | Description               |
+| ----------- | ------------------------- |
+| `EC2_HOST`  | Public IP of EC2 instance |
+| `EC2_USER`  | SSH username (ubuntu)     |
+| `EC2_KEY`   | Private SSH key           |
+
+---
+
+## 📌 Learning Outcomes
+
+* Understanding real-world CI/CD workflow
+* Hands-on experience with Docker
+* Secure SSH-based deployments
+* Cloud application hosting on EC2
+* Automating deployments using GitHub Actions
+
+---
+
+## 🧑‍💻 Author
+
+**Muni Naveen Naidu**
+B.Tech CSE | DevOps & Cloud Enthusiast
+
+---
+
+## ⭐ Acknowledgment
+
+This project was created for learning and hands-on practice in DevOps and cloud deployment.
